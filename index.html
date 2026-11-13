@@ -1,0 +1,504 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Libaas Collection | Fashion Store</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f1f3f6;
+    color: #222;
+}
+
+/* HEADER */
+header {
+    background: #2874f0;
+    color: white;
+    padding: 16px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: 900;
+    color: #ffe500;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 6px;
+    color: white;
+    text-align: center;
+    margin-top: 3px;
+}
+
+.search {
+    flex: 1;
+    max-width: 500px;
+    display: flex;
+    background: white;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.search input {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 13px;
+    font-size: 14px;
+}
+
+.search button {
+    background: #ffe500;
+    border: none;
+    padding: 0 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.header-text {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* NAVIGATION */
+nav {
+    background: white;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 5px #ddd;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #2874f0;
+}
+
+/* HERO */
+.hero {
+    margin: 22px auto;
+    width: 92%;
+    min-height: 240px;
+    border-radius: 12px;
+    background: linear-gradient(120deg, #174ea6, #2874f0, #65a0ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 35px 20px;
+}
+
+.hero h1 {
+    font-size: 38px;
+    margin-bottom: 12px;
+}
+
+.hero p {
+    font-size: 17px;
+    margin-bottom: 22px;
+}
+
+.hero button {
+    background: #ffe500;
+    color: #222;
+    padding: 13px 27px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* CATEGORIES */
+.section {
+    width: 92%;
+    margin: 30px auto;
+}
+
+.section-title {
+    font-size: 23px;
+    margin-bottom: 20px;
+    border-left: 5px solid #2874f0;
+    padding-left: 12px;
+}
+
+.categories {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+}
+
+.category {
+    background: white;
+    text-align: center;
+    padding: 24px 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 8px #ddd;
+    transition: 0.2s;
+}
+
+.category:hover {
+    transform: translateY(-4px);
+    color: #2874f0;
+}
+
+/* PRODUCTS */
+.products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.product {
+    background: white;
+    border-radius: 8px;
+    padding: 24px 15px;
+    text-align: center;
+    box-shadow: 0 2px 8px #ddd;
+    transition: 0.2s;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px #ccc;
+}
+
+.product-icon {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.product h3 {
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.product p {
+    font-size: 13px;
+    color: #777;
+    margin-bottom: 18px;
+}
+
+.product button {
+    background: #2874f0;
+    color: white;
+    border: none;
+    padding: 11px 17px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.product button:hover {
+    background: #1558c0;
+}
+
+/* ABOUT */
+.about {
+    background: white;
+    padding: 35px 25px;
+    text-align: center;
+    border-radius: 10px;
+    line-height: 1.8;
+}
+
+.about h2 {
+    margin-bottom: 12px;
+    color: #2874f0;
+}
+
+/* FOOTER */
+footer {
+    background: #172337;
+    color: white;
+    padding: 35px 6%;
+    margin-top: 40px;
+    text-align: center;
+}
+
+footer h2 {
+    color: #ffe500;
+    margin-bottom: 12px;
+}
+
+footer p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #ddd;
+}
+
+.whatsapp {
+    position: fixed;
+    bottom: 22px;
+    right: 22px;
+    background: #25d366;
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    box-shadow: 0 3px 10px #aaa;
+    z-index: 10;
+}
+
+/* MOBILE */
+@media(max-width: 800px) {
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .categories {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    nav {
+        gap: 18px;
+    }
+}
+
+@media(max-width: 480px) {
+    header {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .search {
+        flex-basis: 100%;
+    }
+
+    .header-text {
+        display: none;
+    }
+
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .product {
+        padding: 20px 8px;
+    }
+
+    .product h3 {
+        font-size: 15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        LIBAAS COLLECTION
+        <span>FASHION STORE</span>
+    </div>
+
+    <div class="search">
+        <input type="text" id="searchInput"
+        placeholder="Search for clothing...">
+        <button onclick="searchProducts()">SEARCH</button>
+    </div>
+
+    <div class="header-text">Welcome to Libaas</div>
+</header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#categories">Categories</a>
+    <a href="#products">Collections</a>
+    <a href="#about">About Us</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section class="hero" id="home">
+    <div>
+        <h1>Discover Your Style</h1>
+        <p>Explore the latest fashion collection at Libaas Collection.</p>
+        <button onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
+            EXPLORE COLLECTION
+        </button>
+    </div>
+</section>
+
+<section class="section" id="categories">
+    <h2 class="section-title">Shop By Category</h2>
+
+    <div class="categories">
+        <div class="category" onclick="filterCategory('Men')">Men's Wear</div>
+        <div class="category" onclick="filterCategory('Women')">Women's Wear</div>
+        <div class="category" onclick="filterCategory('Ethnic')">Ethnic Wear</div>
+        <div class="category" onclick="filterCategory('Kids')">Kids Wear</div>
+        <div class="category" onclick="filterCategory('All')">All Collection</div>
+    </div>
+</section>
+
+<section class="section" id="products">
+    <h2 class="section-title">Our Collections</h2>
+
+    <div class="products" id="productList">
+
+        <div class="product" data-category="Men">
+            <div class="product-icon">👔</div>
+            <h3>Men's Fashion</h3>
+            <p>Explore stylish men's clothing.</p>
+            <button onclick="enquire('Men\\'s Fashion')">Enquire on WhatsApp</button>
+        </div>
+
+        <div class="product" data-category="Women">
+            <div class="product-icon">👗</div>
+            <h3>Women's Collection</h3>
+            <p>Discover elegant fashion styles.</p>
+            <button onclick="enquire('Women\\'s Collection')">Enquire on WhatsApp</button>
+        </div>
+
+        <div class="product" data-category="Ethnic">
+            <div class="product-icon">🥻</div>
+            <h3>Ethnic Wear</h3>
+            <p>Traditional styles for every occasion.</p>
+            <button onclick="enquire('Ethnic Wear')">Enquire on WhatsApp</button>
+        </div>
+
+        <div class="product" data-category="Men">
+            <div class="product-icon">👕</div>
+            <h3>Casual Wear</h3>
+            <p>Comfortable everyday fashion.</p>
+            <button onclick="enquire('Casual Wear')">Enquire on WhatsApp</button>
+        </div>
+
+        <div class="product" data-category="Women">
+            <div class="product-icon">🧥</div>
+            <h3>Western Wear</h3>
+            <p>Modern looks and latest trends.</p>
+            <button onclick="enquire('Western Wear')">Enquire on WhatsApp</button>
+        </div>
+
+        <div class="product" data-category="Kids">
+            <div class="product-icon">🧒</div>
+            <h3>Kids Collection</h3>
+            <p>Fashion for little ones.</p>
+            <button onclick="enquire('Kids Collection')">Enquire on WhatsApp</button>
+        </div>
+
+        <div class="product" data-category="Ethnic">
+            <div class="product-icon">✨</div>
+            <h3>Festive Collection</h3>
+            <p>Special styles for celebrations.</p>
+            <button onclick="enquire('Festive Collection')">Enquire on WhatsApp</button>
+        </div>
+
+        <div class="product" data-category="Men">
+            <div class="product-icon">👖</div>
+            <h3>Bottom Wear</h3>
+            <p>Explore everyday essentials.</p>
+            <button onclick="enquire('Bottom Wear')">Enquire on WhatsApp</button>
+        </div>
+
+    </div>
+</section>
+
+<section class="section" id="about">
+    <div class="about">
+        <h2>About Libaas Collection</h2>
+        <p>
+            Welcome to Libaas Collection, your destination for fashion
+            and style. Explore a variety of clothing collections for
+            every occasion. We believe in making fashion accessible
+            and helping you discover your unique style.
+        </p>
+    </div>
+</section>
+
+<footer id="contact">
+    <h2>LIBAAS COLLECTION</h2>
+    <p>Your Style, Your Identity.</p>
+    <p>For product enquiries and assistance, connect with us on WhatsApp.</p>
+    <p>© 2026 Libaas Collection. All Rights Reserved.</p>
+</footer>
+
+<a class="whatsapp" id="whatsappLink" href="#" target="_blank">
+    WhatsApp Us
+</a>
+
+<script>
+
+/* OWNER: Replace with actual WhatsApp number.
+   Format: 91 followed by 10-digit mobile number. */
+
+const WHATSAPP_NUMBER = "91XXXXXXXXXX";
+
+function enquire(product) {
+    const message = "Hello, I want to enquire about " + product +
+    " at Libaas Collection.";
+    window.open(
+        "https://wa.me/" + WHATSAPP_NUMBER +
+        "?text=" + encodeURIComponent(message),
+        "_blank"
+    );
+}
+
+document.getElementById("whatsappLink").href =
+    "https://wa.me/" + WHATSAPP_NUMBER;
+
+function searchProducts() {
+    const value = document.getElementById("searchInput")
+        .value.toLowerCase();
+
+    document.querySelectorAll(".product").forEach(function(item) {
+        const name = item.innerText.toLowerCase();
+        item.style.display = name.includes(value) ? "block" : "none";
+    });
+}
+
+document.getElementById("searchInput").addEventListener("input", searchProducts);
+
+function filterCategory(category) {
+    document.querySelectorAll(".product").forEach(function(item) {
+        if (category === "All" ||
+            item.dataset.category === category) {
+            item.style.display = "block";
+        } else {
+            item.style.display = "none";
+        }
+    });
+
+    document.getElementById("products").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+</script>
+
+</body>
+</html>
